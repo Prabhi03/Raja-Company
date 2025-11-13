@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { services } from '../constants';
+import LogoIcon from './LogoIcon';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,8 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link to="/" aria-label="Raja & Company Home" className="flex items-center">
+            <Link to="/" aria-label="Raja & Company Home" className="flex items-center gap-2">
+              <LogoIcon className="w-12 h-12" />
               <div>
                   <span className="text-2xl font-bold" style={{fontFamily: 'Montserrat, sans-serif'}}>
                       Raja & Company
@@ -91,7 +93,7 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-[#0A2342] absolute w-full">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#1E3A8A]">Home</Link>
+            <Link to="/" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#14386E]">Home</Link>
             <div className="px-3 py-2">
                 <button onClick={() => setIsServicesOpen(!isServicesOpen)} className="w-full text-left text-base font-medium text-white flex justify-between items-center">
                     Services
@@ -100,17 +102,17 @@ const Header: React.FC = () => {
                 {isServicesOpen && (
                     <div className="mt-2 space-y-1 max-h-60 overflow-y-auto">
                         {services.map(service => (
-                            <Link key={service.id} to={`/services/${service.id}`} onClick={closeAllMenus} className="block pl-4 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-[#1E3A8A]">
+                            <Link key={service.id} to={`/services/${service.id}`} onClick={closeAllMenus} className="block pl-4 pr-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white hover:bg-[#14386E]">
                                 {service.title}
                             </Link>
                         ))}
                     </div>
                 )}
             </div>
-            <Link to="/about" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#1E3A8A]">About</Link>
-            <Link to="/blog" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#1E3A8A]">Blog</Link>
-            <Link to="/property-value-calculator" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#1E3A8A]">Property Value Calculator</Link>
-            <Link to="/contact" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#1E3A8A]">Contact</Link>
+            <Link to="/about" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#14386E]">About</Link>
+            <Link to="/blog" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#14386E]">Blog</Link>
+            <Link to="/property-value-calculator" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#14386E]">Property Value Calculator</Link>
+            <Link to="/contact" onClick={closeAllMenus} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#14386E]">Contact</Link>
             <Link to="/get-a-quote" onClick={closeAllMenus} className="block px-3 py-2 mt-2 rounded-md text-base font-medium text-center text-[#0A2342] bg-[#D4AF37] hover:bg-yellow-500">Get a Quote</Link>
           </div>
         </div>

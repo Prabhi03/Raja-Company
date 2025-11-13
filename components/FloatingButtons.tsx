@@ -45,7 +45,7 @@ const FloatingButtons: React.FC = () => {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-24 right-6 bg-[#0A2342] text-white p-3 rounded-full shadow-lg hover:bg-[#1E3A8A] transition-opacity duration-300 z-40"
+                    className="fixed bottom-24 right-6 bg-[#0A2342] text-white p-3 rounded-full shadow-lg hover:bg-[#14386E] transition-opacity duration-300 z-40"
                     aria-label="Go to top"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
